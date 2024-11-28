@@ -1,0 +1,48 @@
+ {% extends "index.html" %} 
+ {% block title %} Billing Page {% endblock title %} 
+ {% block content %}
+ <style>
+    table,tr,td,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+</style>
+{% load static %}
+<h3 style="margin-left:600px;"> Billing Page</h3>
+
+<p>
+    <label>Customer Email: {{Email}}</label>
+</p>
+
+<h4>Bill Section</h4>
+<table class="center">
+    <thead>
+        <th>Product_ID</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Purchase Price</th>
+        <th>Tax %</th>
+        <th>Tax for product</th>
+        <th>total price</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{Product}}</td>
+            <td>{{Unitprice}}</td>
+            <td>{{Quantity}}</td>
+            <td>{{Totalprice}}</td>
+            <td>{{Tax}}</td>
+            <td>{{Taxpay}}</td>
+            <td>{{Total}}</td>
+        </tr>
+    </tbody> 
+   
+</table><br><br>
+   <label >Total Price without Tax :{{Totalprice}}</label><br><br>
+   <label>Total Tax Payable :{{Taxpay}}</label><br><br>
+   <label>Net Price of purchased item :{{Total}}</label><br><br>
+   <label>cash paid by customer: {{Cash}}</label><br><br>
+   <label>Balance payable to the customer :{{Balance}}</label><br><br>
+   
+{% endblock content %}
